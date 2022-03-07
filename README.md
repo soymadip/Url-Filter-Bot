@@ -1,3 +1,4 @@
+
 # Auto Filter Bot
 
 <p align="center">
@@ -56,7 +57,7 @@ python3 main.py
 
 * TG_USER_SESSION  - A pyrogram user session string. Generate by [clicking here](https://repl.it/@SpEcHiDe/GenerateStringSession)
 
-* MAINCHANNEL_ID - Obtain ID of Channel by forwarding a message from your channel to [ChannelIDHEXbot](https://telegram.dog/channelidhexbot)
+* MAINCHANNEL_ID - Obtain ID of Channel
 
 ## WARNING. THIS BOT IS ONLY FOR MY PERSONAL USE.
 ## DEPLOY AT YOUR OWN RISK.

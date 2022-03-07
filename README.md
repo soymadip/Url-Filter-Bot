@@ -1,22 +1,5 @@
 
-# Auto Filter Bot
-
-<p align="center">
-  <a href="https://www.python.org">
-    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
-
-  </a>
-</p>
-  
-ㅤㅤㅤㅤㅤㅤㅤ  
-[![MIT license](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/soymadip/Url-Filter-Bot.git/blob/main/COPYING)  [![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/soymadip/Url-Filter-Bot.git)
-
-
-
-
-
-#### You can call this as an Auto Filter Bot if you like :D
-#### Bot simply search for the files from provided channel according to given query and gives link to those files as buttons!
+#### This Bot simply search for the Urls from provided channel according to given query and gives link to those links as buttons!
 
 ## How to use the bot
 * Make Url-Text to your channel !

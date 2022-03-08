@@ -1,5 +1,5 @@
 
-#### This Bot simply search for the Urls from provided channel according to given query and gives link to those links as buttons!
+#### This Bot simply searches for the Urls from provided channel according to given query and gives link to those links as buttons!
 
 ## How to use the bot
 * Make Url-Text to your channel !

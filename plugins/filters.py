@@ -52,7 +52,7 @@ async def filter(client: Bot, message: Message):
             buttons.append(
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
-            await asyncio.sleep(2)
+            await asyncio.sleep(3)
             kek = await message.reply_text(
                 f"<b>️📽️ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 </b>: {message.text}\n\n⚙️<b>𝗧𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗳𝘁𝗲𝗿 1 𝗺𝗶𝗻𝘂𝘁𝗲.</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)

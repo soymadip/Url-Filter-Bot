@@ -15,6 +15,10 @@ async def start(client, message):
                     [
                         InlineKeyboardButton("HELP", callback_data="help_data"),
                         InlineKeyboardButton("ABOUT", callback_data="about_data"),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            "⭕️ ADMIN ⭕️", url="https://t.me/anonymous7205")
                     ]
                 ]
             ),

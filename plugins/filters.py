@@ -18,7 +18,7 @@ from pyrogram.types import (
 
 from bot import Bot
 from script import script
-from config import MAINCHANNEL_ID, ADMINS
+from config import MAINCHANNEL_ID, ADMINS, MAINCHANNEL_ID_1
 
 BUTTONS = {}
  
@@ -29,7 +29,7 @@ async def filter(client: Bot, message: Message):
 
     if len(message.text) > 1:    
         btn = []
-        async for msg in client.USER.search_messages(MAINCHANNEL_ID,query=message.text,filter='url'):
+        async for msg in client.USER.search_messages(MAINCHANNEL_ID,MAINCHANNEL_ID_1,query=message.text,filter='url'):
             file_name = msg.text
             msg_id = msg.message_id                     
             link = msg.link

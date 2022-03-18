@@ -27,7 +27,7 @@ async def filter(client: Bot, message: Message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
 
-    if len(message.text) > 2:    
+    if len(message.text) > 1:    
         btn = []
         async for msg in client.USER.search_messages(MAINCHANNEL_ID,query=message.text,filter='url'):
             file_name = msg.text
@@ -48,7 +48,7 @@ async def filter(client: Bot, message: Message):
                 "buttons" : btns
             }
         else:
-            cap = f"\n<b>️📽️ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕄𝕠𝕧𝕚𝕖 </b> : {message.text}\n\n⚙️<b>𝗧𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗳𝘁𝗲𝗿 𝟮 𝗺𝗶𝗻𝘂𝘁𝗲𝘀.</b>"
+            cap = f"\n<b>️📽️ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕄𝕠𝕧𝕚𝕖 </b> : {message.text}\n<b>👤ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕓𝕪 </b> : {message.from_user.mention}\n\n⚙️<b>𝗧𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗳𝘁𝗲𝗿 1 𝗺𝗶𝗻𝘂𝘁𝗲.</b>"
             reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
             buttons = btn
             buttons.append(
@@ -56,7 +56,7 @@ async def filter(client: Bot, message: Message):
             )
             await asyncio.sleep(3)
             fuk = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(buttons))
-            await asyncio.sleep(20)
+            await asyncio.sleep(40)
             await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result Closed ️")
             return
 

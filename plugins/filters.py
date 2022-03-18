@@ -38,7 +38,14 @@ async def filter(client: Bot, message: Message):
             )
 
         if not btn:
-            return
+            btn = []
+        async for msg in client.USER.search_messages(MAINCHANNEL_ID_1,query=message.text,filter='url'):
+            file_name = msg.text
+            msg_id = msg.message_id                     
+            link = msg.link
+            btn.append(
+                [InlineKeyboardButton(text=f"{file_name}",url=f"{link}")]
+            )
 
         if len(btn) > 10: 
             btns = list(split_list(btn, 10)) 

@@ -75,7 +75,7 @@ async def filter(client: Bot, message: Message):
         await asyncio.sleep(3)
         fuk = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(buttons))
         await asyncio.sleep(40)
-        await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result Closed ️")  
+        await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result for {message.text} Closed ️")  
 
 
 @Client.on_callback_query()

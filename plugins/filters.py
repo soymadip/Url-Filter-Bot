@@ -22,7 +22,7 @@ from config import MAINCHANNEL_ID, ADMINS, MAINCHANNEL_ID_1
 
 BUTTONS = {}
  
-@Client.on_message(filters.group & filters.text)
+@Client.on_message(filters.group & filters.text & filters.private)
 async def filter(client: Bot, message: Message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return

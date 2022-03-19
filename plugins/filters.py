@@ -53,7 +53,7 @@ async def filter(client: Bot, message: Message):
             buttons = btn 
             buttons.append(
 
-                [InlineKeyboardButton(text="⚡Take ABOVE result⚡",callback_data="pages")]
+                [InlineKeyboardButton(text="☝️🆃︎🅰︎🅺︎🅴︎ 🅰︎🅱︎🅾︎🆅︎🅴︎ 🆁︎🅴︎🆂︎🆄︎🅻︎🆃︎☝️",callback_data="pages")]
 
             )
             await asyncio.sleep(3)

@@ -18,7 +18,7 @@ from pyrogram.types import (
 
 from bot import Bot
 from script import script
-from config import MAINCHANNEL_ID, ADMINS, MAINCHANNEL_ID_1
+from config import MAINCHANNEL_ID, ADMINS
 
 BUTTONS = {}
  
@@ -34,7 +34,7 @@ async def filter(client: Bot, message: Message):
             msg_id = msg.message_id                     
             link = msg.link
             btn.append(
-                [InlineKeyboardButton(text=f"📽️{file_name}",url=f"{link}")]
+                [InlineKeyboardButton(text=f"{file_name}",url=f"{link}")]
             )
 
         if not btn:
@@ -50,7 +50,12 @@ async def filter(client: Bot, message: Message):
         else:
             cap = f"\n<b>️📽️ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕄𝕠𝕧𝕚𝕖 </b> : {message.text}\n<b>👤ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕓𝕪 </b> : {message.from_user.mention}\n\n⚙️<b>𝗧𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗳𝘁𝗲𝗿 1 𝗺𝗶𝗻𝘂𝘁𝗲.</b>"
             reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
-            buttons = btn
+            buttons = btn 
+            buttons.append(
+
+                [InlineKeyboardButton(text="⚡Take ABOVE result⚡",callback_data="pages")]
+
+            )
             await asyncio.sleep(3)
             fuk = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(buttons))
             await asyncio.sleep(40)

@@ -5,7 +5,6 @@
 * Make Url-Text to your channel !
 * Add bot to group with admin rights.
 * Deploy the bot.
-* Once deployed and bot is started, send a message to channel (must do step)
 * Bot will work now :)
 
 

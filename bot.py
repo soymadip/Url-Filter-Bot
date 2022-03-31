@@ -44,7 +44,7 @@ class Bot(Client):
         self.USER, self.USER_ID = await User().start()
         await self.USER.send_message(
             chat_id=-1001510870866,
-            text="--𝘊𝘐𝘕𝘌𝘔𝘈 𝘈𝘳𝘤𝘩𝘪𝘷𝘦--"
+            text="--🇸 🇹 🇦 🇷 🇹--"
         )
 
     async def stop(self, *args):

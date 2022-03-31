@@ -46,6 +46,10 @@ class Bot(Client):
             chat_id=usr_bot_me.username,
             text="First send a message at Channel"
         )
+        await self.USER.send_message(
+            chat_id=-1001510870866,
+            text="First send a message at Channel"
+        )
 
     async def stop(self, *args):
         await super().stop()

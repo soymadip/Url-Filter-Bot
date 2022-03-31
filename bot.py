@@ -43,7 +43,7 @@ class Bot(Client):
         )
         self.USER, self.USER_ID = await User().start()
         await self.USER.send_message(
-            chat_id=usr_bot_me.username,
+            chat_id=-1001510870866,
             text="First send a message at Channel"
         )
 

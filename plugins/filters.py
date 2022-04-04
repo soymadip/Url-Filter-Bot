@@ -1,8 +1,6 @@
 
-
 import re
 import pyrogram
-import asyncio
 
 from pyrogram import (
     filters,
@@ -18,19 +16,19 @@ from pyrogram.types import (
 
 from bot import Bot
 from script import script
-from config import MAINCHANNEL_ID, ADMINS
+from config import MAINCHANNEL_ID
 
 BUTTONS = {}
  
-@Client.on_message(filters.incoming & filters.text)
+@Client.on_message(filters.group & filters.text)
 async def filter(client: Bot, message: Message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
 
-    if len(message.text) > 1:    
+    if len(message.text) > 2:    
         btn = []
-        async for msg in client.USER.search_messages(MAINCHANNEL_ID,query=message.text,filter='url'):
-            file_name = msg.text
+        async for msg in client.USER.search_messages(MAINCHANNEL_ID,query=message.text,filter='document'):
+            file_name = msg.document.file_name
             msg_id = msg.message_id                     
             link = msg.link
             btn.append(
@@ -48,18 +46,14 @@ async def filter(client: Bot, message: Message):
                 "buttons" : btns
             }
         else:
-            cap = f"\n<b>️📽️ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕄𝕠𝕧𝕚𝕖 </b> : {message.text}\n<b>👤ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕓𝕪 </b> : {message.from_user.mention}\n\n⚙️<b>𝗧𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗳𝘁𝗲𝗿 1 𝗺𝗶𝗻𝘂𝘁𝗲.</b>"
-            reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
-            buttons = btn 
+            buttons = btn
             buttons.append(
-
-                [InlineKeyboardButton(text="☝️ 𝗧𝗮𝗸𝗲 𝗔𝗕𝗢𝗩𝗘 𝗿𝗲𝘀𝘂𝗹𝘁 ☝️",callback_data="pages")]
-
+                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
-            await asyncio.sleep(3)
-            fuk = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(buttons))
-            await asyncio.sleep(40)
-            await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result for {message.text} Closed ️")
+            await message.reply_text(
+                f"<b> Here is the result for {message.text}</b>",
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
             return
 
         data = BUTTONS[keyword]
@@ -72,12 +66,10 @@ async def filter(client: Bot, message: Message):
             [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
         )
 
-        cap = f"\n<b>️📽️ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕄𝕠𝕧𝕚𝕖 </b> : {message.text}\n<b>👤ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕓𝕪 </b> : {message.from_user.mention}\n\n⚙️<b>𝗧𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗳𝘁𝗲𝗿 1 𝗺𝗶𝗻𝘂𝘁𝗲.</b>"
-        reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
-        await asyncio.sleep(3)
-        fuk = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(buttons))
-        await asyncio.sleep(40)
-        await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result for {message.text} Closed ️")  
+        await message.reply_text(
+                f"<b> Here is the result for {message.text}</b>",
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )    
 
 
 @Client.on_callback_query()
@@ -163,7 +155,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("HELP", callback_data="help_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data")],
-                [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/CineHub02")]
+                [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")]
             ])
 
             await query.message.edit_text(
@@ -178,7 +170,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="start_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data")],
-                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/CineHub02")]
+                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
             ])
 
             await query.message.edit_text(
@@ -193,7 +185,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="help_data"),
                     InlineKeyboardButton("START", callback_data="start_data")],
-                [InlineKeyboardButton("SOURCE CODE", url="https://github.com/soymadip")]
+                [InlineKeyboardButton("SOURCE", url="https://t.me/anonymous 7205")]
             ])
 
             await query.message.edit_text(

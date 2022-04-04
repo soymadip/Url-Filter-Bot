@@ -1,7 +1,9 @@
 class script(object):
 
 
-    START_MSG = """ <b>"ℍ𝔼𝕃𝕃𝕆 {}\n\n 𝕀 𝔸𝕄 <a href=https://t.me/{}>{}</a>\n 𝕀 𝔻𝔼𝕃𝕀𝕍𝕀𝔼ℝ ℝ𝔼ℚ𝕌𝔼𝕊𝕋𝔼𝔻 𝕄𝔼𝔻𝕀𝔸 𝕋𝕆 ℙ𝔼𝕆ℙ𝕃𝔼."""
+    START_MSG = """ <b>Hi {}
+I simply search for the files from provided channel according to given query and gives link to those files as buttons!
+For more click <i>help</i></b>"""
 
 
     HELP_MSG = """<b>How to use the bot??</b>

@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# @trojanzhex
-
 
 import re
 import pyrogram
@@ -189,7 +185,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="help_data"),
                     InlineKeyboardButton("START", callback_data="start_data")],
-                [InlineKeyboardButton("SOURCE CODE", url="https://github.com/TroJanzHEX/Auto-Filter-Bot")]
+                [InlineKeyboardButton("SOURCE", url="https://t.me/anonymous 7205")]
             ])
 
             await query.message.edit_text(

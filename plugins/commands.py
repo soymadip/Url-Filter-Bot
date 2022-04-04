@@ -18,7 +18,7 @@ async def start(client, message):
                     ],
                     [
                         InlineKeyboardButton(
-                            "⭕️ ADMIN ⭕️", url="https://t.me/anonymous7205")
+                            "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")
                     ]
                 ]
             ),

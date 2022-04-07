@@ -21,7 +21,7 @@ TG_USER_SESSION = os.environ.get("TG_USER_SESSION", "")
 
 # ID of Channel from which the bot shoul search files
 MAINCHANNEL_ID = os.environ.get("MAINCHANNEL_ID", "")
-LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "-1001510870866")
+LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "-1001717031121")
 
 
 

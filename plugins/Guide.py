@@ -22,7 +22,7 @@ from config import MAINCHANNEL_ID, ADMINS, SHIFT_CHANNEL
 
 
 
-@Client.on_message(filters.incoming & filters.text)
+@Client.on_message(filters.incoming & filters.text )
 async def filter(client: Bot, message: Message):
-    if message.chat.id = SHIFT_CHANNEL:
+    if message.chat.id == SHIFT_CHANNEL:
         await client.send_message(SHIFT_CHANNEL,f'done bro')

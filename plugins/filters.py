@@ -57,7 +57,7 @@ async def filter(client: Bot, message: Message):
 
             )
             await asyncio.sleep(3)
-            await client.send_message(LOG_CHANNEL,f'{message.from_user.mention} took file👇 \n\n<b>{message.text}</b>')
+            #await client.send_message(LOG_CHANNEL,f'{message.from_user.mention} took file👇 \n\n<b>{message.text}</b>')
             fuk = await message.reply_photo(photo="https://telegra.ph/file/4e7e0a76a54d16ce2b80c.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(buttons))
             await asyncio.sleep(40)
             await fuk.edit(f"\n \n⚙️ {message.from_user.mention}'s Result for {message.text} Closed ️")
